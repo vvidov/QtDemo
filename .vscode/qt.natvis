@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+    <!-- QString visualizer -->
+    <Type Name="QString">
+        <DisplayString Condition="d-&gt;size == 0">""</DisplayString>
+        <DisplayString>{d->ptr,su}</DisplayString>
+        <StringView>d->ptr,su</StringView>
+        <Expand>
+            <Item Name="[size]">d->size</Item>
+            <Item Name="[capacity]">d->alloc</Item>
+            <ArrayItems>
+                <Size>d->size</Size>
+                <ValuePointer>d->ptr</ValuePointer>
+            </ArrayItems>
+        </Expand>
+    </Type>
+
+    <!-- QVector visualizer -->
+    <Type Name="QVector&lt;*&gt;">
+        <DisplayString>{{ size={d-&gt;size} }}</DisplayString>
+        <Expand>
+            <Item Name="[size]">d->size</Item>
+            <Item Name="[capacity]">d->alloc</Item>
+            <ArrayItems>
+                <Size>d->size</Size>
+                <ValuePointer>($T1*)d->ptr</ValuePointer>
+            </ArrayItems>
+        </Expand>
+    </Type>
+
+    <!-- QList visualizer (since Qt 6 QList is just an alias for QVector) -->
+    <Type Name="QList&lt;*&gt;">
+        <DisplayString>{{ size={d-&gt;size} }}</DisplayString>
+        <Expand>
+            <Item Name="[size]">d->size</Item>
+            <Item Name="[capacity]">d->alloc</Item>
+            <ArrayItems>
+                <Size>d->size</Size>
+                <ValuePointer>($T1*)d->ptr</ValuePointer>
+            </ArrayItems>
+        </Expand>
+    </Type>
+
+    <!-- QMutex visualizer -->
+    <Type Name="QMutex">
+        <DisplayString Condition="d_ptr->recursive">Recursive Mutex</DisplayString>
+        <DisplayString>Non-Recursive Mutex</DisplayString>
+        <Expand>
+            <Item Name="recursive">d_ptr->recursive</Item>
+        </Expand>
+    </Type>
+</AutoVisualizer>

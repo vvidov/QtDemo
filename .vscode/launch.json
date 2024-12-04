@@ -11,8 +11,8 @@
             "cwd": "${workspaceFolder}",
             "environment": [
                 {
-                    "name": "PATH",
-                    "value": "/usr/local/bin:/usr/bin:${env:PATH}"
+                    "name": "PYTHONPATH",
+                    "value": "/home/vscode/.gdb/qt6"
                 }
             ],
             "externalConsole": false,
@@ -24,23 +24,23 @@
                     "ignoreFailures": true
                 },
                 {
-                    "description": "Set Disassembly Flavor to Intel",
-                    "text": "-gdb-set disassembly-flavor intel",
+                    "description": "Load Qt6 Pretty Printers",
+                    "text": "python import sys; sys.path.insert(0, '/home/vscode/.gdb/qt6'); import qt6printers; qt6printers.register_printers(None)",
                     "ignoreFailures": true
                 },
                 {
-                    "description": "Print Object Settings",
-                    "text": "-gdb-set print object on",
+                    "description": "Set Print Options",
+                    "text": "set print object on",
                     "ignoreFailures": true
                 },
                 {
-                    "description": "Print Array Settings",
-                    "text": "-gdb-set print array on",
+                    "description": "Set Array Options",
+                    "text": "set print array-indexes on",
                     "ignoreFailures": true
                 },
                 {
-                    "description": "Print Array Indexes",
-                    "text": "-gdb-set print array-indexes on",
+                    "description": "Set Qt6 Options",
+                    "text": "set print repeats 0\nset print elements 1000",
                     "ignoreFailures": true
                 }
             ],
@@ -52,15 +52,13 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/threads_test",
-            "args": [
-                "--gtest_filter=ThreadTest.MultipleThreadsAccess"
-            ],
+            "args": ["--gtest_filter=ThreadTest.DebugDataView"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [
                 {
-                    "name": "PATH",
-                    "value": "/usr/local/bin:/usr/bin:${env:PATH}"
+                    "name": "PYTHONPATH",
+                    "value": "/home/vscode/.gdb/qt6"
                 }
             ],
             "externalConsole": false,
@@ -72,23 +70,23 @@
                     "ignoreFailures": true
                 },
                 {
-                    "description": "Set Disassembly Flavor to Intel",
-                    "text": "-gdb-set disassembly-flavor intel",
+                    "description": "Load Qt6 Pretty Printers",
+                    "text": "python import sys; sys.path.insert(0, '/home/vscode/.gdb/qt6'); import qt6printers; qt6printers.register_printers(None)",
                     "ignoreFailures": true
                 },
                 {
-                    "description": "Print Object Settings",
-                    "text": "-gdb-set print object on",
+                    "description": "Set Print Options",
+                    "text": "set print object on",
                     "ignoreFailures": true
                 },
                 {
-                    "description": "Print Array Settings",
-                    "text": "-gdb-set print array on",
+                    "description": "Set Array Options",
+                    "text": "set print array-indexes on",
                     "ignoreFailures": true
                 },
                 {
-                    "description": "Print Array Indexes",
-                    "text": "-gdb-set print array-indexes on",
+                    "description": "Set Qt6 Options",
+                    "text": "set print repeats 0\nset print elements 1000",
                     "ignoreFailures": true
                 }
             ],

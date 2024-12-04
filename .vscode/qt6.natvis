@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+    <Type Name="QString">
+        <DisplayString>{d.ptr,sb}</DisplayString>
+        <StringView>d.ptr,sb</StringView>
+    </Type>
+
+    <Type Name="QVector&lt;*&gt;">
+        <DisplayString>{{ size={d.ptr->size} }}</DisplayString>
+        <Expand>
+            <Item Name="[size]">d.ptr->size</Item>
+            <ArrayItems>
+                <Size>d.ptr->size</Size>
+                <ValuePointer>reinterpret_cast&lt;$T1*&gt;(d.ptr->data)</ValuePointer>
+            </ArrayItems>
+        </Expand>
+    </Type>
+
+    <Type Name="QList&lt;*&gt;">
+        <DisplayString>{{ size={d.ptr->size} }}</DisplayString>
+        <Expand>
+            <Item Name="[size]">d.ptr->size</Item>
+            <ArrayItems>
+                <Size>d.ptr->size</Size>
+                <ValuePointer>reinterpret_cast&lt;$T1*&gt;(d.ptr->data)</ValuePointer>
+            </ArrayItems>
+        </Expand>
+    </Type>
+</AutoVisualizer>
