@@ -24,7 +24,6 @@ install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
 _deps
-build/
 out/
 
 # C++ objects and libs
@@ -36,11 +35,9 @@ out/
 *.lai
 *.so
 *.so.*
-*.dll
 *.dylib
 
 # VS Code (allow configuration files and natvis)
-.vscode/*
 !.vscode/launch.json
 !.vscode/tasks.json
 !.vscode/settings.json
@@ -94,5 +91,24 @@ Thumbs.db
 
 # IDE-specific
 *.autosave
-*.swp
 *~
+
+# Build directories
+build/
+
+# IDE specific files
+*.user
+
+# Compiled files
+*.exe
+*.pdb
+*.exp
+
+# CMake generated
+cmake_install.cmake
+compile_commands.json
+
+# Allow GitHub workflows
+!.github/
+!.github/workflows/
+!.github/workflows/*.yml

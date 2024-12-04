@@ -1,5 +1,7 @@
 # Qt Threads Synchronization Library
 
+[![Build and Test](https://github.com/vvidov/QtDemo/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/vvidov/QtDemo/actions/workflows/build-and-test.yml)
+
 A multi-threaded library demonstrating thread synchronization and shared resource management using Qt and Google Test.
 
 ## Project Overview
