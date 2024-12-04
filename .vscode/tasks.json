@@ -1,0 +1,38 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Tests",
+            "type": "shell",
+            "command": "cmake --build ${workspaceFolder}/build --config Debug",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "Clean Build",
+            "type": "shell",
+            "command": "rm -rf ${workspaceFolder}/build/* && cmake -B ${workspaceFolder}/build -S ${workspaceFolder} && cmake --build ${workspaceFolder}/build --config Debug",
+            "group": "build",
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "Run Tests",
+            "type": "shell",
+            "command": "cd ${workspaceFolder}/build && ctest --output-on-failure",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "dependsOn": [
+                "Build Tests"
+            ]
+        }
+    ]
+}

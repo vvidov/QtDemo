@@ -1,0 +1,30 @@
+{
+    "name": "Qt Development",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "remoteUser": "vscode",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,consistency=cached",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cmake-tools",
+                "twxs.cmake",
+                "qt-dev.qt-dev-plugin",
+                "qt-dev.qt-creator-plugin",
+                "mrorz.language-gettext",
+                "zixuanwang.linkerscript",
+                "eamodio.gitlens",
+                "ms-vscode.cpptools-extension-pack",
+                "ms-vscode.cpptools-themes"
+            ],
+            "settings": {
+                "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+                "cmake.configureOnOpen": true,
+                "cmake.buildDirectory": "${workspaceFolder}/build"
+            }
+        }
+    }
+}
