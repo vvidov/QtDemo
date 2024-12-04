@@ -1,3 +1,4 @@
 {
-    "DockerRun.DisableDockerrc": true
+    "DockerRun.DisableDockerrc": true,
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
 }

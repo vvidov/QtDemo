@@ -39,11 +39,12 @@ out/
 *.dll
 *.dylib
 
-# VS Code (allow configuration files)
+# VS Code (allow configuration files and natvis)
 .vscode/*
 !.vscode/launch.json
 !.vscode/tasks.json
 !.vscode/settings.json
+!.vscode/*.natvis
 *.code-workspace
 .history/
 

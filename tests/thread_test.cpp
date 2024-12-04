@@ -104,3 +104,21 @@ TEST_F(ThreadTest, ConcurrentAddAndClear) {
     
     worker1.stopWork();
 }
+
+TEST_F(ThreadTest, DebugDataView) {
+    SharedResource resource;
+    
+    // Add some test data
+    resource.addData("First String");
+    resource.addData("Second String");
+    resource.addData("Third String");
+    
+    // Get all data - set breakpoint on next line
+    QVector<QString> allData = resource.getAllData();
+    
+    // Verify data
+    ASSERT_EQ(allData.size(), 3);
+    EXPECT_EQ(allData[0], "First String");
+    EXPECT_EQ(allData[1], "Second String");
+    EXPECT_EQ(allData[2], "Third String");
+}
